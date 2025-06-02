@@ -1,10 +1,12 @@
 import express from "express";
+import cors from 'cors';
 import OpenAI from "openai";
 
 const app = express();
 const port = 3000;
 const openai = new OpenAI();
 
+app.use(cors());
 app.use(express.json());
 
 app.post("/chat", async (req, res) => {
